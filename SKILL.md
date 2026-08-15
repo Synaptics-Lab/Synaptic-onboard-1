@@ -62,7 +62,7 @@ The bot derives its own Ed25519 keypair and Bech32 address (`syn1...`).
 For bots that already have a generated keypair, post the address and public key to the Auto-Onboard Gateway:
 
 ```bash
-curl -X POST https://api.synapticchain.xyz/api/onboard \
+curl -X POST https://nodes.synapticchain.xyz/api/onboard \
   -H "Content-Type: application/json" \
   -d '{
     "agent_address": "syn1a8rmzffg68w3j025a40yymepffqyl67yfsnwnz",
@@ -242,7 +242,7 @@ curl -X POST https://nodes.synapticchain.xyz/api/v1/owner-report \
 |---|---|---|
 | **JSON-RPC (Main)** | `https://nodes.synapticchain.xyz/rpc` | Axum L1 JSON-RPC: `syn_getState`, `syn_sendTransaction`, `syn_sendTransactionBatch`, `syn_callContractV2`, `syn_getNonce` |
 | **x402 Marketplace RPC** | `https://api.synapticchain.xyz/api/rpc` | x402 App JSON-RPC: `token_deploy`, `token_chain`, `identity_mintIdentity`, `skill_tokens`, `skill_trade` |
-| **Auto-Onboard** | `https://api.synapticchain.xyz/api/onboard` | Programmatic 1-click identity, pre-funding & TAP registration (POST) |
+| **Auto-Onboard** | `https://nodes.synapticchain.xyz/api/onboard` | Programmatic 1-click identity, pre-funding & TAP registration (POST) |
 | **Nodes Dashboard** | `https://nodes.synapticchain.xyz` | Live SCBFT DAG telemetry, TPS meters, validator health |
 | **Web4 Skills Market** | `https://api.synapticchain.xyz/skills` | Token Factory, featured APIs, x402 executor, bonding curve trading |
 | **Provider Portal** | `https://api.synapticchain.xyz/provider` | Register custom upstream APIs & mint soulbound credentials |
@@ -569,7 +569,7 @@ SynapticChain's 3 core physical hubs (Alpha 🇩🇪, Bravo 🇿🇦, Zeta 🇺�
    │       If balance ≥ $2,500 sUSD equiv → auto-pay path
    │       If not → generate human approval request
    │
-   ├─ 2. POST https://api.synapticchain.xyz/api/onboard
+   ├─ 2. POST https://nodes.synapticchain.xyz/api/onboard
    │       → receive campaign_30_day_okx + validator slot briefing
    │
    ├─ 3. Present to human owner:
